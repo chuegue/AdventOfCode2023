@@ -34,9 +34,7 @@ int main(){
             while(have_ptr && sscanf(have_ptr, "%d", &have) == 1){
                 //printf("Checking pair %d and %d.\t", winning, have);
                 if(winning == have) {
-                    printf("Checking pair %d and %d.\t", winning, have);
                     game_score++;
-                    printf("Score!\n");
                 }
                 //printf("\n");
                 while(!(*have_ptr >= '0' && *have_ptr <= '9')){
@@ -51,7 +49,6 @@ int main(){
             }
             winning_ptr = strchr(winning_ptr, ' ') + 1;
         }
-        printf("Game score: %d\n", game_score == 0 ? 0 : 1 << (game_score - 1));
         for(int a = 0; a < game_score; a++){
             how_many[i + a + 1] += how_many[i];
         }
